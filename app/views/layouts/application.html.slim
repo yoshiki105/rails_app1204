@@ -1,11 +1,18 @@
 doctype html
 html
   head
-    title
-      | RailsApp1204
+    title = page_title
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = yield
+    div#container
+      header
+        = render 'shared/header'
+      main
+        = yield
+      aside#sidebar
+        = render 'shared/sidebar'
+      footer
+        = render 'shared/footer'
