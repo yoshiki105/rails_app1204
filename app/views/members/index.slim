@@ -1,6 +1,8 @@
 - @page_title = "ユーザー一覧"
 h1 = @page_title
 
+div.toolbar = link_to "新規登録", :new_member
+
 - if @members.present?
   table.list
     thead
@@ -8,11 +10,14 @@ h1 = @page_title
         th 会員番号
         th ユーザー名
         th 氏名
+        th 操作
     tbody
       - @members.each do |member|
         tr
           td style="text-align: right" = member.number
-          td = member.name
+          td = link_to member.name, member
           td = member.full_name
+          td #{link_to "編集", [:edit, member]} |
+             #{link_to "削除", member, method: :delete, data: {confirm: "本当に削除しますか？"}}
 - else
   p ユーザー情報がありません。
