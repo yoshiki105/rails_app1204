@@ -1,0 +1,31 @@
+table.attr
+  tr
+    th = form.label :number, '会員番号'
+    td = form.text_field :number, size: 8
+  tr
+    th = form.label :name, 'ユーザー名'
+    td = form.text_field :name
+  tr
+    th = form.label :full_name, '氏名'
+    td = form.text_field :full_name
+  tr
+    th 性別
+    td
+      = form.radio_button :sex, 1
+      = form.label :sex_1, '男'
+      = form.radio_button :sex, 2
+      = form.label :sex_2, '女'
+  tr
+    th = form.label :birthday, '誕生日', for: "member_birthday_1i"
+    td = form.date_select :birthday,
+            statr_year: 1940, end_year: Time.current.year,
+            use_month_numbers: true
+  tr
+    th = form.label :email, 'メールアドレス'
+    td = form.text_field :email
+  tr
+    th 管理者
+    td
+      = form.check_box :administrator
+      = form.label :administrator, '管理者'
+
