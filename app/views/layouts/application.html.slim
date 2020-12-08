@@ -15,6 +15,8 @@ html
       header
         = render 'shared/header'
       main
+        - if flash.notice
+          p.notice = flash.notice
         = yield
       aside#sidebar
         = render 'shared/sidebar'
