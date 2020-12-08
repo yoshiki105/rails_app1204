@@ -13,3 +13,7 @@ ja:
         birthday: 誕生日
         email: メールアドレス
         administrator: 管理者
+    errors:
+      messages:
+        invalid_member_name: は半角英数字で入力してください。
+
