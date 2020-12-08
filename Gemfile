@@ -16,6 +16,7 @@ gem 'webpacker', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'html2slim'
 gem 'slim-rails'
+gem 'email_validator', '~> 1.6'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
