@@ -10,7 +10,10 @@ class MembersController < ApplicationController
     render 'index'
   end
 
-  def show; end
+  # 会員情報の詳細
+  def show
+    @member = Member.find(params[:id])
+  end
 
   def new; end
 
