@@ -17,6 +17,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'html2slim'
 gem 'slim-rails'
 gem 'email_validator', '~> 1.6'
+gem 'rails-i18n', '~> 6.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

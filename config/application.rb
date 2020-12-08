@@ -11,6 +11,7 @@ module RailsApp1204
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.time_zone = 'Tokyo'
+    config.i18n.default_locale = :ja
 
     config.generators do |g|
       g.template_engine :slim
