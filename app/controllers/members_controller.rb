@@ -25,9 +25,33 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
 
-  def create; end
+  # 会員の新規登録
+  def create
+    @member = Member.new(member_params)
+    if @member.save
+      redirect_to @member
+    else
+      render 'new'
+    end
+  end
 
   def update; end
 
   def destroy; end
+
+  private
+
+  def member_params
+    attrs = %i[
+      number
+      name
+      full_name
+      sex
+      birthday
+      email
+      administrator
+    ]
+
+    params.require(:member).permit(attrs)
+  end
 end
