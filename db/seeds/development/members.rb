@@ -9,6 +9,8 @@ gnames = %W[\u592A\u90CE \u6B21\u90CE \u82B1\u5B50]
     email: "#{names[idx]}@example.com",
     birthday: '1981-12-01',
     sex: [1, 1, 2][idx % 3],
-    administrator: idx.zero?
+    administrator: idx.zero?,
+    password: 'pass1234',
+    password_confirmation: 'pass1234'
   )
 end
