@@ -1,0 +1,13 @@
+h2 ログイン
+- if flash.alert
+  p.alert = flash.alert
+
+= form_with url: :session, local: true do |form|
+  div
+    = form.label :name, 'ユーザー名：'
+    = form.text_field :name
+  div
+    = form.label :password, 'パスワード：'
+    = form.password_field :password
+  div
+    = form.submit 'ログイン'
