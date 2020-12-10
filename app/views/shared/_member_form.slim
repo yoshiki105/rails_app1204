@@ -25,6 +25,10 @@ table.attr
   tr
     th = form.label :email
     td = form.text_field :email
+  - if @member.new_record?
+    tr
+      th = form.label :password
+      td = form.text_field :password
   - if controller.kind_of?(MembersController)
     tr
       th = Member.human_attribute_name(:administrator)
