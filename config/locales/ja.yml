@@ -19,4 +19,5 @@ ja:
     errors:
       messages:
         invalid_member_name: は半角英数字で入力してください。
+        wrong: が正しくありません
 
