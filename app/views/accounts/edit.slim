@@ -1,2 +1,9 @@
-<h1>Accounts#edit</h1>
-<p>Find me in app/views/accounts/edit.html.erb</p>
+- @page_title = "アカウント情報の編集"
+
+h1 = @page_title
+
+div.toolbar = link_to "マイアカウントに戻る", :account
+
+= form_with model: @member, url: :account, local: true, scope: :account do |form|
+  = render "shared/member_form", form: form
+  div = form.submit

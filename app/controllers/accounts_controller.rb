@@ -5,5 +5,7 @@ class AccountsController < ApplicationController
     @member = current_member
   end
 
-  def edit; end
+  def edit
+    @member = current_member
+  end
 end
