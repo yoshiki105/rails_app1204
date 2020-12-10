@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'passwords/edit'
   get 'accounts/show'
   get 'accounts/edit'
   root 'top#index'
