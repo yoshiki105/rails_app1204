@@ -1,6 +1,8 @@
 class Member < ApplicationRecord
   has_secure_password
 
+  attr_accessor :current_password
+
   # バリデーション
   validates :number,
             presence: true,
@@ -24,6 +26,7 @@ class Member < ApplicationRecord
 
   validates :full_name, presence: true, length: { maximum: 20 }
   validates :email, email: { allow_blank: true }
+  validates :password, presence: { if: :current_password }
 
   # クラスメソッド
   class << self
