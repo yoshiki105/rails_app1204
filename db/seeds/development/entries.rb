@@ -8,7 +8,7 @@ body =
   member = Member.find_by(name: name)
   0.upto(9) do |idx|
     Entry.create(
-      member_id: member,
+      member_id: member.id,
       title: "エントリ#{idx}",
       body: body,
       posted_at: 10.days.ago.advance(days: idx),

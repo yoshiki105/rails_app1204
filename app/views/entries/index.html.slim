@@ -1,2 +1,16 @@
-h1 Entries#index
-p Find me in app/views/entries/index.html.slim
+- @page_title = @member ? @member.name + "さんのエントリ" : "会員のエントリ"
+h1 = @page_title
+
+- if current_member
+  div.toolbar = link_to "エントリの作成", :new_entry
+
+-if @entries.present?
+  - @entries.each do |entry|
+    h2 = entry.title
+    p
+      = truncate(entry.body, length: 80)
+      = link_to "もっと読む", entry
+    / = render "footer", entry: entry
+  = paginate @entries
+- else
+  p 記事がありません
