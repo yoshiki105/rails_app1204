@@ -25,6 +25,11 @@ module RailsApp1204
                        routing_specs: false
     end
 
+    # ActionControllerに伝わらない例外はErrorsControllerのshowアクションで処理する
+    config.exceptions_app = lambda { |env|
+      ErrorsController.action(:show).call(env)
+    }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
