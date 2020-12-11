@@ -13,7 +13,9 @@ class EntriesController < ApplicationController
                        .order(posted_at: :desc).page(params[:page]).per(3)
   end
 
-  def show; end
+  def show
+    @entry = Entry.readable_for(current_member).find(params[:id])
+  end
 
   def new; end
 
