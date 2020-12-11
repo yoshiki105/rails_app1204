@@ -14,10 +14,12 @@ gem 'webpacker', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 # gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'html2slim'
-gem 'slim-rails'
 gem 'email_validator', '~> 1.6'
+gem 'html2slim'
+gem 'kaminari'
+gem 'kaminari-i18n'
 gem 'rails-i18n', '~> 6.0'
+gem 'slim-rails'
 
 
 group :development, :test do
