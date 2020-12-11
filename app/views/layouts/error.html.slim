@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta charset="UTF-8"
+    title = page_title
+    = stylesheet_link_tag "application", media: "all"
+  body
+    #container
+      header
+        = image_tag "logo.jpg", size: "272x48"
+        nav.menubar
+          a href="/" TOP
+      main
+        = yield
+      footer
+        = render "shared/footer"
