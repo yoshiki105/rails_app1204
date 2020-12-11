@@ -1,0 +1,9 @@
+ul.entry-footer
+  - if current_member
+    li = Entry.status_text(entry.status)
+    - if current_member == entry.member
+      = menu_link_to "編集", [:edit, entry]
+      = menu_link_to "削除", entry, method: :delete,
+                                      data: { confirm: "本当に削除しますか？" }
+  li by #{ link_to entry.member.name, [entry.member, :entries] }
+  li = entry.posted_at.strftime("%Y/%m/%d %H:%M")
