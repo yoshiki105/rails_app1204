@@ -13,5 +13,16 @@ class Entry < ApplicationRecord
   scope :full, lambda { |member|
                  where('member_id = ? OR status <> ?', member.id, 'draft') # 自分が見ることのできるエントリ
                }
-  scope :readable_for, ->(member) { member ? full(member) : common }  # ログインの可否で見る事のできるエントリを判別する
+  scope :readable_for, ->(member) { member ? full(member) : common } # ログインの可否で見る事のできるエントリを判別する
+
+  class << self
+    # ステータスカラムを日本語化する
+    def status_text(status)
+      I18n.t("activerecord.attributes.entry.status_#{status}")
+    end
+
+    def status_options
+      STATUS_VALUES.map { |status| [status_text(status), status] }
+    end
+  end
 end
