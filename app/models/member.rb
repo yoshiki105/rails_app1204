@@ -1,6 +1,8 @@
 class Member < ApplicationRecord
   has_secure_password
 
+  has_many :entries, dependent: :destroy
+
   attr_accessor :current_password
 
   # バリデーション
