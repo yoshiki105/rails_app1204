@@ -23,5 +23,6 @@ div.toolbar = link_to "新規登録", :new_member
           td = member.full_name
           td #{link_to "編集", [:edit, member]} |
              #{link_to "削除", member, method: :delete, data: {confirm: "本当に削除しますか？"}}
+  = paginate @members
 - else
   p ユーザー情報がありません。
