@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   root 'top#index'
   get 'about', to: 'top#about'
+  get '/bad_request', to: 'top#bad_request'
+  get '/forbidden', to: 'top#forbidden'
+  get '/internal_server_error', to: 'top#internal_server_error'
 
   # 普通のリソース
   resources :members do
     get 'search', on: :collection
-    resources :entries, only: [:index]
+    resources :entries, only: :index
   end
   resources :entries
 
