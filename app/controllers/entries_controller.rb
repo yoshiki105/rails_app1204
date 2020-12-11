@@ -24,4 +24,28 @@ class EntriesController < ApplicationController
   def edit
     @entry = current_member.entries.find(params[:id])
   end
+
+  def create
+    @entry = Entry.new(entry_params)
+    @entry.member = current_member
+    if @entry.save
+      redirect_to @entry, notice: '記事を作成しました。'
+    else
+      render 'new'
+    end
+  end
+
+  private
+
+  def entry_params
+    attrs = %i[
+      member_id
+      title
+      body
+      posted_at
+      status
+    ]
+
+    params.require(:entry).permit(attrs)
+  end
 end
