@@ -17,7 +17,9 @@ class EntriesController < ApplicationController
     @entry = Entry.readable_for(current_member).find(params[:id])
   end
 
-  def new; end
+  def new
+    @entry = Entry.new(posted_at: Time.current)
+  end
 
   def edit; end
 end

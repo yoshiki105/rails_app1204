@@ -1,2 +1,6 @@
-h1 Entries#new
-p Find me in app/views/entries/new.html.slim
+- @page_title = "エントリの新規作成"
+h1 = @page_title
+
+= form_with model: @entry, local: true do |form|
+  = render "form", form: form
+  div = form.submit
