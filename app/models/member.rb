@@ -3,6 +3,9 @@ class Member < ApplicationRecord
 
   has_many :entries, dependent: :destroy
 
+  has_one_attached :profile_picture
+  attribute :new_profile_picture
+
   attr_accessor :current_password
 
   # バリデーション
