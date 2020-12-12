@@ -2,6 +2,9 @@
 
 table.attr
   tr
+    th = form.label :new_profile_picture
+    td = form.file_field :new_profile_picture
+  tr
     th = form.label :number
     td = form.text_field :number, size: 8
   tr

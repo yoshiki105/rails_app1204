@@ -5,6 +5,7 @@ ja:
       entry: エントリ
     attributes:
       member:
+        new_profile_picture: プロフィール画像
         number: 会員番号
         name: ユーザー名
         full_name: 氏名
