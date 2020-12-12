@@ -18,6 +18,7 @@ gem 'email_validator', '~> 1.6'
 gem 'html2slim'
 gem 'kaminari'
 gem 'kaminari-i18n'
+gem 'mini_magick'
 gem 'rails-i18n', '~> 6.0'
 gem 'slim-rails'
 
