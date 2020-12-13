@@ -5,6 +5,7 @@ class Member < ApplicationRecord
 
   has_one_attached :profile_picture
   attribute :new_profile_picture
+  attribute :remove_profile_picture, :boolean
 
   attr_accessor :current_password
 
@@ -47,9 +48,13 @@ class Member < ApplicationRecord
     end
   end
 
-  # プロフィール画像更新
+  # プロフィール画像更新（追加と削除）
   def update_profile_picture
-    self.profile_picture = new_profile_picture if new_profile_picture
+    if new_profile_picture
+      self.profile_picture = new_profile_picture
+    elsif remove_profile_picture
+      profile_picture.purge
+    end
   end
 
   # クラスメソッド
