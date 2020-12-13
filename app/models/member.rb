@@ -37,7 +37,7 @@ class Member < ApplicationRecord
 
   # プロフィール画像更新
   def update_profile_picture
-    self.profile = new_profile_picture if new_profile_picture
+    self.profile_picture = new_profile_picture if new_profile_picture
   end
 
   # クラスメソッド
