@@ -35,6 +35,18 @@ class Member < ApplicationRecord
   validates :email, email: { allow_blank: true }
   validates :password, presence: { if: :current_password }
 
+  validate if: :new_profile_picture do # nilでもfalseでもない時
+    if new_profile_picture.respond_to?(:content_type)
+      unless new_profile_picture.content_type.in?(ALLOWED_CONTENT_TYPES)
+        # ファイル形式が正しくない時
+        errors.add(:new_profile_picture, :invalid_image_type)
+      end
+    else
+      # フォームからアップロードされたデータではない時
+      errors.add(:new_profile_picture, :invalid)
+    end
+  end
+
   # プロフィール画像更新
   def update_profile_picture
     self.profile_picture = new_profile_picture if new_profile_picture
