@@ -8,6 +8,8 @@ class Member < ApplicationRecord
 
   attr_accessor :current_password
 
+  before_save :update_profile_picture
+
   # バリデーション
   validates :number,
             presence: true,
@@ -32,6 +34,11 @@ class Member < ApplicationRecord
   validates :full_name, presence: true, length: { maximum: 20 }
   validates :email, email: { allow_blank: true }
   validates :password, presence: { if: :current_password }
+
+  # プロフィール画像更新
+  def update_profile_picture
+    self.profile = new_profile_picture if new_profile_picture
+  end
 
   # クラスメソッド
   class << self
