@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     get 'search', on: :collection
     resources :entries, only: :index
   end
-  resources :entries
+  resources :entries do
+    resources :images, controller: 'entry_images' # EntryImagesコントローラーのパスをimageで定義
+  end
 
   # 単数リソース
   resource :session, only: %i[create destroy]
