@@ -24,6 +24,7 @@ class AccountsController < ApplicationController
   def account_params
     attrs = %i[
       new_profile_picture
+      remove_profile_picture
       number
       name
       full_name
