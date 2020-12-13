@@ -1,5 +1,6 @@
 class Entry < ApplicationRecord
   belongs_to :member
+  has_many :images, class_name: 'EntryImage'
 
   # ステータスカラムの値を定義
   STATUS_VALUES = %w[draft member_only public].freeze
