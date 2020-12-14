@@ -1,6 +1,12 @@
 class Entry < ApplicationRecord
   belongs_to :member
+
+  # 1対多の関連付け
   has_many :images, class_name: 'EntryImage'
+
+  # 多対多の関連付け
+  has_many :votes, dependent: :destroy
+  has_many :voters, through: :votes, source: :member
 
   # ステータスカラムの値を定義
   STATUS_VALUES = %w[draft member_only public].freeze
