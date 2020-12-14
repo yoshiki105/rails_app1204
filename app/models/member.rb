@@ -62,6 +62,11 @@ class Member < ApplicationRecord
     end
   end
 
+  # いいねできるかどうか調べる
+  def votable_for?(entry)
+    entry && entry.member != self && !votes.exists?(entry_id: entry.id)
+  end
+
   # クラスメソッド
   class << self
     def search(query)
