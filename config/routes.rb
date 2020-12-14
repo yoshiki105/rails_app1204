@@ -22,4 +22,9 @@ Rails.application.routes.draw do
   resource :session, only: %i[create destroy]
   resource :account, only: %i[show edit update]
   resource :password, only: %i[show edit update]
+
+  # 管理者向けページ
+  namespace :admin do
+    root 'top#index'
+  end
 end
