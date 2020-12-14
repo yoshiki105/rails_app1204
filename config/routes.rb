@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :entries, only: :index
   end
   resources :entries do
+    patch 'like', 'unlike', on: :member
+    get 'voted', on: :collection
     resources :images, controller: 'entry_images' do # EntryImagesコントローラーのパスをimageで定義
       patch :move_higher, :move_lower, on: :member
     end
