@@ -2,7 +2,9 @@
 h1 = @page_title
 
 - if current_member
-  div.toolbar = link_to "エントリの作成", :new_entry
+  ul.toolbar
+    = menu_link_to "エントリの作成", :new_entry
+    = menu_link_to 'いいねしたエントリ', :voted_entries
 
 -if @entries.present?
   - @entries.each do |entry|

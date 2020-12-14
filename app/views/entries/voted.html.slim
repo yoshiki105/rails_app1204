@@ -1,0 +1,13 @@
+- @page_title = '投票したエントリ'
+h1 = @page_title
+
+- if @entries.present?
+  ul
+    - @entries.each do |entry|
+      li
+        = link_to entry.title, entry
+        |  by #{link_to entry.member.name, [entry.member, :entries]}
+        |  - #{link_to '取消', [:unlike, entry], method: :patch, data: {confirm: '取り消しますか？'}}
+  = paginate @entries
+- else
+  p エントリがありません。
