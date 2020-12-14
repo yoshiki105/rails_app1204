@@ -1,2 +1,4 @@
-h1 Admin::Top#index
-p Find me in app/views/admin/top/index.html.slim
+- @page_title = '管理トップページ'
+ul
+  li = link_to '会員管理', '#'
+  li = link_to 'エントリ管理', '#'
