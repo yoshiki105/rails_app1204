@@ -1,2 +1,8 @@
-h1 EntryImages#new
-p Find me in app/views/entry_images/new.html.slim
+- @page_title = 'ブログ記事への画像追加'
+h1 = @page_title
+h2 = @entry.title
+
+- url = entry_images_path(@entry, @image)
+= form_with model: @image, url: url, scope: 'image', local: true do |form|
+  = render 'form', form: form
+  div = form.submit

@@ -24,8 +24,8 @@ ul.toolbar
           td = image.alt_text
           td
             div
-              = link_to '編集', edit_entry_image_path(@entry, image)
-              = link_to '削除', entry_image_path(@entry, image),
-                method: :delete, data: {confirm: '本当に削除しますか？'}
+              |
+                #{link_to '編集', edit_entry_image_path(@entry, image)}
+                 | #{link_to '削除', entry_image_path(@entry, image), method: :delete, data: {confirm: '本当に削除しますか？'}}
 - else
   p 画像がありません
