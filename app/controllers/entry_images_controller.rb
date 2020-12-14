@@ -7,7 +7,7 @@ class EntryImagesController < ApplicationController
 
   # 画像一覧
   def index
-    @images = @entry.images.order(:id)
+    @images = @entry.images.order(:position)
   end
 
   # 編集フォームにリダイレクト
@@ -51,6 +51,20 @@ class EntryImagesController < ApplicationController
     @image = @entry.images.find(params[:id])
     @image.destroy
     redirect_to [@entry, :images], notice: '画像を削除しました。'
+  end
+
+  # 表示位置を上げる
+  def move_higher
+    @image = @entry.images.find(params[:id])
+    @image.move_higher # move_higherメソッドは、acts_as_listによって提供される
+    redirect_back fallback_location: [@entry, :images]
+  end
+
+  # 表示位置を下げる
+  def move_lower
+    @image = @entry.images.find(params[:id])
+    @image.move_lower # move_lowerメソッドは、acts_as_listによって提供される
+    redirect_back fallback_location: [@entry, :images]
   end
 
   private
