@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
   resources :entries do
     resources :images, controller: 'entry_images' do # EntryImagesコントローラーのパスをimageで定義
-      patch :move_hegher, :move_lower, on: :member
+      patch :move_higher, :move_lower, on: :member
     end
   end
 
