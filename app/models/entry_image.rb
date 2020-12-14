@@ -1,6 +1,7 @@
 class EntryImage < ApplicationRecord
   belongs_to :entry
   has_one_attached :data
+  acts_as_list scope: :entry    # Entryモデルに属する子オブジェクト集団の中で並び順を維持する
 
   attribute :new_data
 
