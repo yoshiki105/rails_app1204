@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     resources :entries, only: :index
   end
   resources :entries do
-    resources :images, controller: 'entry_images' # EntryImagesコントローラーのパスをimageで定義
+    resources :images, controller: 'entry_images' do # EntryImagesコントローラーのパスをimageで定義
+      patch :move_hegher, :move_lower, on: :member
+    end
   end
 
   # 単数リソース
