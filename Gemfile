@@ -14,6 +14,8 @@ gem 'webpacker', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 # gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.2', require: false
+
+gem 'acts_as_list'
 gem 'email_validator', '~> 1.6'
 gem 'html2slim'
 gem 'kaminari'
