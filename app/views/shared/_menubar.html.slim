@@ -9,3 +9,5 @@ nav.menubar
       = menu_link_to 'ユーザー一覧', :members
       - if current_member.administrator?
         = menu_link_to '管理ページ', :admin_root
+    - else
+      = menu_link_to '新規登録', [:new, :account]
