@@ -1,0 +1,9 @@
+- @page_title = "会員情報の編集"
+
+h1 = @page_title
+
+dev.toolbar = link_to '会員の詳細に戻る', [:admin, @member]
+
+= form_with model: @member, url: [:admin, @member], local: true do |form|
+  = render "shared/member_form", form: form
+  div = form.submit '会員情報を編集する'

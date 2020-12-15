@@ -38,7 +38,7 @@ table.attr
     tr
       th = form.label :password
       td = form.text_field :password
-  - if controller.kind_of?(MembersController)
+  - if controller.kind_of?(Admin::MembersController)
     tr
       th = Member.human_attribute_name(:administrator)
       td
