@@ -1,7 +1,0 @@
-- @page_title = "会員の新規登録"
-
-h1 = @page_title
-
-= form_with model: @member, local: true do |form|
-  = render "shared/member_form", form: form
-  div = form.submit '新規登録'
