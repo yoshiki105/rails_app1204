@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/internal_server_error', to: 'top#internal_server_error'
 
   # 普通のリソース
-  resources :members do
+  resources :members, only: %i[index show] do
     get 'search', on: :collection
     resources :entries, only: :index
   end
@@ -26,5 +26,8 @@ Rails.application.routes.draw do
   # 管理者向けページ
   namespace :admin do
     root 'top#index'
+    resources :members do
+      get 'search', on: :collection
+    end
   end
 end
