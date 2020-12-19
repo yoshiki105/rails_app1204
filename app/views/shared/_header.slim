@@ -1,12 +1,14 @@
-= image_tag 'logo.jpg', size: '150x150', alt: 'ポートフォリオ'
+.container
+  .header-logo
+    = image_tag 'logo.jpg', alt: 'ポートフォリオ'
 
-- if current_member
-  ul.account-menu
-    = menu_link_to current_member.name + "さん", :account
-    = menu_link_to "ログアウト", :session,
-        method: :delete, data: { confirm: "ログアウトしますか？" }
+  - if current_member
+    ul.account-menu
+      = menu_link_to current_member.name + "さん", :account
+      = menu_link_to "ログアウト", :session,
+          method: :delete, data: { confirm: "ログアウトしますか？" }
 
-- if controller.kind_of?(Admin::Base)
-  = render 'shared/admin_menubar'
-- else
-  = render 'shared/menubar'
+  - if controller.kind_of?(Admin::Base)
+    = render 'shared/admin_menubar'
+  - else
+    = render 'shared/menubar'

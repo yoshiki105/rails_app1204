@@ -1,9 +1,7 @@
 nav.menubar
-  ul
+  ul.header-nav
     = menu_link_to 'TOP', :root
-    = menu_link_to '項目', '#'
-    = menu_link_to '項目', '#'
-    = menu_link_to '項目', '#'
+    = menu_link_to 'ABOUT', '#'
     = menu_link_to 'エントリ一覧', :entries
     - if current_member
       = menu_link_to 'ユーザー一覧', :members

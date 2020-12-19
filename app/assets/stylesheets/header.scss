@@ -1,14 +1,69 @@
-header ul.account-menu {
-  width: 200px;
-  float: right;
-  font-size: 80%;
-  text-align: right;
-  list-style-type: none;
-  margin: 6px 0 0 0;
-  padding: 0;
+header{
+  width: 100%;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.7);
+  top: 0;
+  left: 0;
+
+  .container{
+    height: 100px;
+    max-width: none;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+
+    nav {
+      margin-left: auto;
+
+      ul.header-nav {
+        margin: 0 -15px;
+        display: flex;
+
+        li{
+          padding: 0 15px;
+
+          a{
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .header-logo img{
+    height: 60px;
+    vertical-align: bottom;
+  }
 }
 
-header ul.account-menu li {
-  display: inline;
-  margin-right: 10px;
+// ul.header-nav {
+//     display: flex;
+//     align-items: center;
+//   }
+
+// header ul.account-menu {
+//   width: 200px;
+//   float: right;
+//   font-size: 80%;
+//   text-align: right;
+//   list-style-type: none;
+//   margin: 6px 0 0 0;
+//   padding: 0;
+// }
+
+// header ul.account-menu li {
+//   display: inline;
+//   margin-right: 10px;
+// }
+
+// nav.menubar{
+//   ul{
+//     display: flex;
+//     align-items: center;
+//   }
+
+// }
+
+nav#admin-menubar {
+  background-color: #800;
 }

@@ -13,14 +13,14 @@ html
     /                       integrity: "sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2",
     /                       crossorigin: "anonymous"
   body
-    div#container
+    div.container
       header
         = render 'shared/header'
       main
         - if flash.notice
           p.notice = flash.notice
         = yield
-      aside#sidebar
-        = render 'shared/sidebar'
+      / aside#sidebar
+      /   = render 'shared/sidebar'
       footer
         = render 'shared/footer'
