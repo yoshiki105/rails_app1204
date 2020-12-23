@@ -1,14 +1,16 @@
-.container
-  .header-logo
-    = image_tag 'logo.jpg', alt: 'ポートフォリオ'
+nav.navbar.navbar-expand-lg.fixed-top.navbar-light style="background-color: #008000;"
+  = link_to 'NatuLife', :root, class: "navbar-brand"
+  button.navbar-toggler.bg-light type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+    span.navbar-toggler-icon
 
-  - if current_member
-    ul.account-menu
-      = menu_link_to current_member.name + "さん", :account
-      = menu_link_to "ログアウト", :session,
-          method: :delete, data: { confirm: "ログアウトしますか？" }
+  div.collapse.navbar-collapse#navbarNav
+    - if current_member
+      ul.account-menu
+        = menu_link_to current_member.name + "さん", :account
+        = menu_link_to "ログアウト", :session,
+            method: :delete, data: { confirm: "ログアウトしますか？" }
 
-  - if controller.kind_of?(Admin::Base)
-    = render 'shared/admin_menubar'
-  - else
-    = render 'shared/menubar'
+    - if controller.kind_of?(Admin::Base)
+      = render 'shared/admin_menubar'
+    - else
+      = render 'shared/menubar'

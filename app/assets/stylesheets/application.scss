@@ -48,6 +48,10 @@ ul {
   }
 }
 
+.top-container{
+  margin-top: 56px;
+}
+
 // トップビュー
 .top-view{
   background-image: url("top-image.jpg");
@@ -94,7 +98,15 @@ ul {
     }
   }
 }
-
+.jumbotron { background:url(img3.jpg) center no-repeat; background-size: cover;}
+.about-top {
+  background-image: url("img3.jpg");
+  background-size: cover;
+  // color: white;
+  height: 500px;
+  padding-top: 100px;
+}
+.about-middle{border: black;}
 // /* ブロック要素 */
 // p, h1, h2, h3, table, ul {
 //   margin: 0 0 1em;

@@ -1,5 +1,36 @@
 - @page_title = 'このサイトについて'
 
-h1 = @page_title
+div.about-top
+  h1.text-center Natu Lifeってなに？
+  h6.text-center 身近な自然を投稿・共有できるアプリです。
+  h6.text-center いまから自然に触れる機会を増やしましょう！
 
-p このサイトは、ポートフォリオサイトです。
+.container.bg-light
+  h1.text-center.shadow.p-3.my-5.bg-white.rounded
+    | Natu Lifeでできること
+  p
+    .d-flex.justify-content-around
+      button.btn.btn-success.col-3 aria-controls="multiCollapseExample1" aria-expanded="false" data-target="#multiCollapseExample1" data-toggle="collapse" type="button"
+        | 投稿する
+      button.btn.btn-success.col-3 aria-controls="multiCollapseExample2" aria-expanded="false" data-target="#multiCollapseExample2" data-toggle="collapse" type="button"
+        | 探す
+  .row
+    .col
+      #multiCollapseExample1.collapse
+        .card.card-body
+          | 身近な自然を投稿してみよう！<br>
+            撮影した写真も投稿できます。<br>
+            気になるスポットはお気に入り登録したり、<br>
+            他のユーザーを誘うことだってできちゃいます！
+    .col
+      #multiCollapseExample2.collapse
+        .card.card-body
+          | 近くの自然を探すことができます！<br>
+            目的別に探すこともできます！<br>
+            地域別に探すことも。<br>
+            ジャンル別に探すことだってできちゃいます！
+
+.container.my-5.d-flex.justify-content-center
+  a.btn.btn-primary.btn-lg.active aria-pressed="true" href="#" role="button"
+    | 仮ログインで試してみる！
+

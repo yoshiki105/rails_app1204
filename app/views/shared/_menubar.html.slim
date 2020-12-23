@@ -1,11 +1,10 @@
-nav.menubar
-  ul.header-nav
-    = menu_link_to 'TOP', :root
-    = menu_link_to 'ABOUT', '#'
-    = menu_link_to 'エントリ一覧', :entries
-    - if current_member
-      = menu_link_to 'ユーザー一覧', :members
-      - if current_member.administrator?
-        = menu_link_to '管理ページ', :admin_root
-    - else
-      = menu_link_to '新規登録', [:new, :account]
+ul.navbar-nav.text-center
+  li.nav-item = menu_link_to 'TOP', :root, class: 'nav-link border-top mt-2'
+  li.nav-item = menu_link_to 'ABOUT', :about, class: 'nav-link'
+  li.nav-item = menu_link_to 'エントリ一覧', :entries, class: 'nav-link'
+  - if current_member
+    li.nav-item = link_to 'ユーザー一覧', :members, class: 'nav-link'
+    - if current_member.administrator?
+      li.nav-item = link_to '管理ページ', :admin_root, class: 'nav-link'
+  - else
+    li.nav-item = menu_link_to '新規登録', [:new, :account], class: 'nav-link'

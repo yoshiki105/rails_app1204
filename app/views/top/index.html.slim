@@ -1,31 +1,32 @@
 - @page_title = 'トップページ'
 
-.top-view
-  .container
-    p 身の回りの自然を探そう！
-    form
-      input type="search"
-      button type="submit" Search
+.container
+  .top-view
+    .container
+      p 身の回りの自然を探そう！
+      form
+        input type="search"
+        button type="submit" Search
 
-.middle-view
-  .container
-    p みんなの投稿を見る！
-    ul
-      li = link_to '森', '#'
-      li = link_to '川', '#'
-      li = link_to '公園', '#'
-      li = link_to '海', '#'
+  .middle-view
+    .container
+      p みんなの投稿を見る！
+      ul
+        li = link_to '森', '#'
+        li = link_to '川', '#'
+        li = link_to '公園', '#'
+        li = link_to '海', '#'
 
-  .container
-    ul
-      - 1.upto(3) do |idx|
-        li
-          = link_to '#' do
-            .card style=("width: 18rem;")
-              = image_tag "img#{idx}.jpg", alt: "img#{idx}", class: 'card-img-top'
-              .card-body
-                h5.card-title タイトル
-                p.card-text ここに説明を書く。ここに説明を書く。ここに説明を書く。ここに説明を書く。ここに説明を書く。
+    .container
+      ul
+        - 1.upto(3) do |idx|
+          li
+            = link_to '#' do
+              .card style=("width: 18rem;")
+                = image_tag "img#{idx}.jpg", alt: "img#{idx}", class: 'card-img-top'
+                .card-body
+                  h5.card-title タイトル
+                  p.card-text ここに説明を書く。ここに説明を書く。ここに説明を書く。ここに説明を書く。ここに説明を書く。
 
 
 
