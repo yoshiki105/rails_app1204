@@ -1,10 +1,31 @@
 nav.pagination {
-  font-size: 75%;
-  padding: 4px 8px;
-  border: 1px solid #499;
+  width: 60%;
+  font-size: 125%;
+  margin: 0 auto;
   word-spacing: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span{
+    margin: 0 10px;
+
+    a:hover{
+      background-color: #ff9872;
+      border-radius: 15px;
+      margin: 0 -10px;
+      padding: 0 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    &.current {
+      color: white;
+      background-color: #93c9ff;
+      border-radius: 15px;
+      margin: 0px;
+      padding: 0 10px;
+    }
+  }
 }
 
-nav.pagination span.current {
-  font-weight: bold;
-}

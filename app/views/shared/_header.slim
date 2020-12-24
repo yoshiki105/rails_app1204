@@ -1,6 +1,10 @@
-nav.navbar.navbar-expand-lg.fixed-top.navbar-light style="background-color: #008000;"
+nav.navbar.navbar-expand-lg.fixed-top.navbar-light style="background-color: #008000; height: 56px;"
   = link_to 'NatuLife', :root, class: "navbar-brand"
-  button.navbar-toggler.bg-light type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+
+  button.navbar-toggler.bg-light.ml-auto type="button" data-toggle="collapse" data-target="#navbarlogin" aria-controls="navbarlogin"  aria-expanded="false" aria-label="Toggle navigation"
+    span ログイン
+
+  button.navbar-toggler.bg-light.ml-2 type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
     span.navbar-toggler-icon
 
   div.collapse.navbar-collapse#navbarNav
@@ -14,3 +18,8 @@ nav.navbar.navbar-expand-lg.fixed-top.navbar-light style="background-color: #008
       = render 'shared/admin_menubar'
     - else
       = render 'shared/menubar'
+
+  div.collapse.navbar-collapse#navbarlogin
+    .text-center.border-top.mt-2.py-3
+      = render 'shared/login_form'
+

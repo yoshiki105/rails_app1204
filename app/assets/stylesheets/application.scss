@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
 // /* ページ全体 */
 // body {
 //   background-color: white;
@@ -29,9 +30,9 @@ body {
 }
 
 /* リンク */
-a:link { color: black; }
-a:visited { color: black; }
-a:hover { color: black; }
+// a:link { color: black; }
+// a:visited { color: black; }
+// a:hover { color: black; }
 a img { border: none; }
 
 a{
@@ -107,6 +108,7 @@ ul {
   padding-top: 100px;
 }
 .about-middle{border: black;}
+.container-body{padding-top: 100px;}
 // /* ブロック要素 */
 // p, h1, h2, h3, table, ul {
 //   margin: 0 0 1em;
